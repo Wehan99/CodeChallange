@@ -1,1 +1,35 @@
+//Find the Longest word in a String
 
+//Question
+
+function findLongestWord(str) {
+  return str.length;
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
+
+//Answer
+
+
+function findLongestWord(str) {
+
+  let longestWord= "";                                                          //Initializing variables
+
+  var punctuationless= str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()|]/g,"");         //removing punctuation
+
+  
+  let words= punctuationless.split(" ");                                        //spliting spaces
+
+  for (var i = 0; i < words.length; i++) {                                      // find the longest word 
+    let ind= words[i];                                                          // if there are same length string, programme will show the 1st longest string
+    if(ind.length>longestWord.length){
+      longestWord=ind;
+    }
+
+   
+    }
+    return(longestWord);                                                        //return longest number
+  
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");                // Input
