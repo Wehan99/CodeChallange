@@ -1,1 +1,24 @@
+Formatted Devision
+
+//Question - 
+Have the function FormattedDevision(num1,num2) take both parameters being passed, divide num1 by num2, and return the result as a string with properly formatted 
+commas and 4 significant digits after the decimal place.
+
+//Answer
+
+function FormattedDevision(num1, num2){
+
+  var divideAnswer = num1/num2;                                             //first divide 2 numbers
+
+  var fixedAnswer = divideAnswer.toFixed(4);                                //set answer to 4 decimal points
+
+  var finalAnswer = fixedAnswer.toString().split(".");                      //set number to string and split (.)
+
+  finalAnswer[0]= finalAnswer[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");     //set the number with commas as thousand seperates
+
+  return finalAnswer.join(".");                                             //then add (.) and return the answer
+     
+}
+
+console.log(FormattedDevision(1121212,3));                                  //input
 
